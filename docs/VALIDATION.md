@@ -27,4 +27,6 @@ Validated locally on October 10, 2026, with Python 3.11.15, uv 0.11.29, LangGrap
 - A repeat research request encountered an Arxiv HTTP failure. The workflow reported the failed tool and absence of research evidence. A subsequent combined run using Wikipedia completed successfully.
 - Final synthesis originally received only specialist summaries. It now also receives bounded excerpts of the retrieved tool evidence, alongside source identifiers, so it can check specialist interpretations.
 
-These are functional smoke checks, not accuracy benchmarks. Small local models can select unsuitable tools or misinterpret evidence. Source records remain available for review, and generated claims are not automatically verified for semantic support. Hosted GitHub Actions has been configured but has not run before publication.
+The initial hosted GitHub Actions run exposed a test-directory setup issue: the nested temporary directory assumed a local cache folder already existed. Test artifacts now use an ignored directory directly under the checkout, which works without that prerequisite. The fix was checked in a fresh checkout before updating the published repository.
+
+These are functional smoke checks, not accuracy benchmarks. Small local models can select unsuitable tools or misinterpret evidence. Source records remain available for review, and generated claims are not automatically verified for semantic support.
